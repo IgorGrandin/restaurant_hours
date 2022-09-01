@@ -2,7 +2,7 @@
 #define FILTERHOURS_H
 
 #include <QObject>
-#include <qqml.h>
+//#include <qqml.h>
 
 class FilterHours : public QObject
 {
