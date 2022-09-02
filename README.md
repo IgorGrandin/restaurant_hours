@@ -13,7 +13,7 @@
   - [Acesso ao Projeto](#acesso-ao-projeto)
   - [Testes Unitários](#testes-unitários)
   - [Abrir e Rodar o Projeto](#abrir-e-rodar-o-projeto)
-  - [Desenvolvedores](#desenvolvedores)
+  - [Desenvolvedor](#desenvolvedor)
 
 ## Descrição do Projeto
 <p align="justify">
@@ -39,8 +39,13 @@
 ## Aplicação
 ![](https://github.com/IgorGrandin/restaurant_hours/blob/master/restaurant_hours.gif)
 
-<p align="justify">
- Métodos:<br>
+
+### Funcionamento:
+Após o [processo de instalação](#abrir-e-rodar-o-projeto), a Interface Gráfica ficará disponível em sua tela, contendo os seguintes elementos:
+
+
+
+### Métodos:
  
  ```c++
  QStringList availableHours();
@@ -63,7 +68,6 @@ Como a aplicação QML só permite a inserção de um horário, a lista sempre t
 Método responsável por monitorar as alterações realizadas pelo Método `void setAvailableHours(QStringList resName);` e notificar todos os objetos que utilizam o retorno do Método `QStringList availableHours();` para que atualizem seus valores.
 
 
-</p>
 
 ## Ferramentas Utilizadas
 <a href="https://www.qt.io/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" alt="qt" width="40" height="35"/> </a> <br>
@@ -84,6 +88,6 @@ Após baixar o projeto, abra o `Qt Creator`. Na tela inicial clique em:
 
 O `Qt Creator` deve executar algumas etapas de configuração do projeto e, ao finalizá-las, o app já estará rodando em sua tela. 🏆 
 
-## Desenvolvedores
+## Desenvolvedor
 | [<img src="https://avatars.githubusercontent.com/u/71189062?v=4" width=115><br><sub>Igor Grandin</sub>](https://github.com/igorgrandin) |
 | :---: 
