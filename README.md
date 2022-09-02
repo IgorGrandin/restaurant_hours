@@ -9,6 +9,8 @@
   - [Status do Projeto](#status-do-projeto)
   - [Funcionalidades](#funcionalidades)
   - [Aplicação](#aplicação)
+    - [Interface Gráfica](#interface-gráfica)
+    - [Métodos](#métodos)
   - [Ferramentas Utilizadas](#ferramentas-utilizadas)
   - [Acesso ao Projeto](#acesso-ao-projeto)
   - [Testes Unitários](#testes-unitários)
@@ -37,15 +39,18 @@
 :heavy_check_mark: `Funcionalidade 4:` Exibir lista com nomes e horários de funcionamento dos restaurantes filtrados.
 
 ## Aplicação
-![](https://github.com/IgorGrandin/restaurant_hours/blob/master/restaurant_hours.gif)
+![](https://github.com/IgorGrandin/restaurant_hours/blob/master/imgs/restaurant_hours.gif)
 
-
-### Funcionamento:
+### Interface Gráfica
 Após o [processo de instalação](#abrir-e-rodar-o-projeto), a Interface Gráfica ficará disponível em sua tela, contendo os seguintes elementos:
 
+![](https://github.com/IgorGrandin/restaurant_hours/blob/master/imgs/Tela_Inicial.jpg)<br>
 
+(1) Inserção do horário desejado no formato `HH:mm` entre 01:00 e 24:59.<br>
+(2) Botão de chamada do Método `void setAvailableHours(QStringList resName);` para filtragem de lista.<br>
+(3) Tela para exibição da lista de Strings retornada pelo Método `QStringList availableHours();`.<br>
 
-### Métodos:
+### Métodos
  
  ```c++
  QStringList availableHours();
@@ -59,7 +64,39 @@ Método responsável por retornar um Lista de Strings contendo as informações 
  ```
 
 Método responsável por receber uma Lista de Strings contendo os horários desejados para futura filtragem.<br>
-Como a aplicação QML só permite a inserção de um horário, a lista sempre terá apenas uma posição, mas foi implementado dessa forma para ter autonomia de notificar o Método `void availableHoursChanged();` e permitir o retorno do Método `QStringList availableHours();` como sendo uma Lista de Strings.
+Como a aplicação QML só permite a inserção de um horário, a lista sempre terá apenas uma posição, mas foi implementado dessa forma para ter a autonomia de notificação do Método `void availableHoursChanged();`, a fim de permitir o retorno do Método `QStringList availableHours();` como sendo uma Lista de Strings.<br>
+Ao ser chamado através do Botão da Interface Gráfica, o Método abre o arquivo .csv, confere se há algum erro na abertura e, em caso negativo, faz um cópia das linhas de forma estruturada, normalizando os dados, como indicado no seguinte trecho de código: 
+
+ ```c++
+QFile file("../restaurant_hours/restaurant_hours.csv");
+if (!file.open(QIODevice::ReadOnly)) {
+    qDebug() << file.errorString();
+} else {
+    m_resName.clear();
+    while (!file.atEnd()) {
+        QByteArray line = file.readLine();
+        QByteArray avHours = m_avHours[0].toLocal8Bit();
+        line = line.replace("\"", "").replace("\r\n","-" + avHours).replace("\n","-" + avHours);
+        if(line.split('-').length() >= 3 && line.split(',').length() >= 2 ){
+            m_resName.append(line);
+        }
+    }
+ ```
+ 
+ Vale ressaltar que só serão copiados os dados que tiverem a seguinte estrutura no arquivo .csv: `NomeRestaurante,"H:mm-H:mm"`.<br>
+ Por fim, há uma lógica de `filter` implementada para filtrar os valores desejados através do trecho de código:
+ 
+ ```c++
+ std::copy_if(m_resName.begin(), m_resName.end(), std::back_inserter(m_resResult), pred);
+ ```
+ 
+ E um `map` que normaliza os dados para exibição na Interface Gráfica.
+ 
+ ```c++
+ std::transform(m_resResult.begin(), m_resResult.end(), m_resResult.begin(), unary_op);
+ ```
+
+ Emitindo, por fim, a notificação da mudança de valores filtrados.
 
  ```c++
  void availableHoursChanged();
