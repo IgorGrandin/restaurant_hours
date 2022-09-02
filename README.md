@@ -47,7 +47,7 @@ Após o [processo de instalação](#abrir-e-rodar-o-projeto), a Interface Gráfi
 ![](https://github.com/IgorGrandin/restaurant_hours/blob/master/imgs/Tela_Inicial.jpg)<br>
 
 (1) Inserção do horário desejado no formato `HH:mm` entre 01:00 e 24:59.<br>
-(2) Botão de chamada do Método `void setAvailableHours(QStringList resName);` para filtragem de lista.<br>
+(2) Botão de chamada do Método `void setAvailableHours(QStringList resTime);` para filtragem de lista.<br>
 (3) Tela para exibição da lista de Strings retornada pelo Método `QStringList availableHours();`.<br>
 
 ### Métodos
@@ -57,10 +57,10 @@ Após o [processo de instalação](#abrir-e-rodar-o-projeto), a Interface Gráfi
  ```
 
 Método responsável por retornar um Lista de Strings contendo as informações dos restaurantes filtrados.<br>
- Na Interface Gráfica, o retorno dessa função será exibido na `ScrollView` e atualizado sempre que o Método `void availableHoursChanged();` for notificado por alguma mudança do Método `void setAvailableHours(QStringList resName);`.
+ Na Interface Gráfica, o retorno dessa função será exibido na `ScrollView` e atualizado sempre que o Método `void availableHoursChanged();` for notificado por alguma mudança do Método `void setAvailableHours(QStringList resTime);`.
 
  ```c++
- void setAvailableHours(QStringList resName);
+ void setAvailableHours(QStringList resTime);
  ```
 
 Método responsável por receber uma Lista de Strings contendo os horários desejados para futura filtragem.<br>
@@ -102,7 +102,7 @@ if (!file.open(QIODevice::ReadOnly)) {
  void availableHoursChanged();
  ```
 
-Método responsável por monitorar as alterações realizadas pelo Método `void setAvailableHours(QStringList resName);` e notificar todos os objetos que utilizam o retorno do Método `QStringList availableHours();` para que atualizem seus valores.
+Método responsável por monitorar as alterações realizadas pelo Método `void setAvailableHours(QStringList resTime);` e notificar todos os objetos que utilizam o retorno do Método `QStringList availableHours();` para que atualizem seus valores.
 
 
 
