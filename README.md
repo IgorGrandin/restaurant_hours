@@ -39,8 +39,8 @@
 
 
 ## Ferramentas Utilizadas
-<a href="https://www.qt.io/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" alt="qt" width="40" height="35"/> </a> 
-<a href="https://cplusplus.com/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png/1280px-Qt_logo_2016.svg.png" alt="c++" width="40" height="40"/> </a> <a href="https://doc.qt.io/qt-6/qtqml-index.html" target="_blank"> <img src="https://s3-eu-west-1.amazonaws.com/qt-showroom/uploads/2014/08/qml_creator_icon512-300x300.png" alt="qml" width="40" height="40"/> </a> 
+<a href="https://www.qt.io/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" alt="qt" width="40" height="35"/> </a> <br>
+<a href="https://cplusplus.com/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png" alt="c++" width="40" height="40"/> </a> <a href="https://doc.qt.io/qt-6/qtqml-index.html" target="_blank"> <img src="https://s3-eu-west-1.amazonaws.com/qt-showroom/uploads/2014/08/qml_creator_icon512-300x300.png" alt="qml" width="40" height="40"/> </a> 
 
 ## Acesso ao projeto
 Você pode [acessar o código fonte do projeto](https://github.com/igorgrandin/restaurant_hours).
