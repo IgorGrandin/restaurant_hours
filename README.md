@@ -46,21 +46,21 @@
  QStringList availableHours();
  ```
 
- <p style="margin-left:30px">Método responsável por retornar um Lista de Strings contendo as informações dos restaurantes filtrados.<br>
- Na Interface Gráfica, o retorno dessa função será exibido na `ScrollView` e atualizado sempre que o Método `void availableHoursChanged();` for notificado por alguma mudança do Método `void setAvailableHours(QStringList resName);`.</p>
+Método responsável por retornar um Lista de Strings contendo as informações dos restaurantes filtrados.<br>
+ Na Interface Gráfica, o retorno dessa função será exibido na `ScrollView` e atualizado sempre que o Método `void availableHoursChanged();` for notificado por alguma mudança do Método `void setAvailableHours(QStringList resName);`.
 
  ```c++
  void setAvailableHours(QStringList resName);
  ```
 
-<p style="margin-left:30px">Método responsável por receber uma Lista de Strings contendo os horários desejados para futura filtragem.<br>
-Como a aplicação QML só permite a inserção de um horário, a lista sempre terá apenas uma posição, mas foi implementado dessa forma para ter autonomia de notificar o Método `void availableHoursChanged();` e permitir o retorno do Método `QStringList availableHours();` como sendo uma Lista de Strings.</p>
+Método responsável por receber uma Lista de Strings contendo os horários desejados para futura filtragem.<br>
+Como a aplicação QML só permite a inserção de um horário, a lista sempre terá apenas uma posição, mas foi implementado dessa forma para ter autonomia de notificar o Método `void availableHoursChanged();` e permitir o retorno do Método `QStringList availableHours();` como sendo uma Lista de Strings.
 
  ```c++
  void availableHoursChanged();
  ```
 
-<p style="margin-left:30px">Método responsável por monitorar as alterações realizadas pelo Método `void setAvailableHours(QStringList resName);` e notificar todos os objetos que utilizam o retorno do Método `QStringList availableHours();` para que atualizem seus valores. </p>
+Método responsável por monitorar as alterações realizadas pelo Método `void setAvailableHours(QStringList resName);` e notificar todos os objetos que utilizam o retorno do Método `QStringList availableHours();` para que atualizem seus valores.
 
 
 </p>
