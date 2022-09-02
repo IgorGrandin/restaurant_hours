@@ -18,13 +18,13 @@ QStringList FilterHours::availableHours(){
     return m_resName;
 }
 
-void FilterHours::setAvailableHours(QStringList resName)
+void FilterHours::setAvailableHours(QStringList resTime)
 {
 
-    if(m_avHours != resName)
+    if(m_avHours != resTime)
     {
 
-        m_avHours = resName;
+        m_avHours = resTime;
 
         QFile file("../restaurant_hours/restaurant_hours2.csv");//docName);
         if (!file.open(QIODevice::ReadOnly)) {
