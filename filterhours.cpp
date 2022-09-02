@@ -25,7 +25,7 @@ void FilterHours::setAvailableHours(QStringList resTime)
 
         m_avHours = resTime;
 
-        QFile file("../restaurant_hours/restaurant_hours.csv");//docName);
+        QFile file("../restaurant_hours/restaurant_hours.csv");
         if (!file.open(QIODevice::ReadOnly)) {
             qDebug() << file.errorString();
         } else {
@@ -34,9 +34,7 @@ void FilterHours::setAvailableHours(QStringList resTime)
                 QByteArray line = file.readLine();
                 QByteArray avHours = m_avHours[0].toLocal8Bit();
                 line = line.replace("\"", "").replace("\r\n","-" + avHours).replace("\n","-" + avHours);
-                //qDebug() << line;
                 if(line.split('-').length() >= 3 && line.split(',').length() >= 2 ){
-                    qDebug() << line;
                     m_resName.append(line);
                 }
             }
