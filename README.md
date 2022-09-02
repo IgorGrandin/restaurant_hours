@@ -36,7 +36,13 @@
 :heavy_check_mark: `Funcionalidade 4:` Exibir lista com nomes e horários de funcionamento dos restaurantes filtrados.
 
 ## Aplicação
+![](https://github.com/IgorGrandin/restaurant_hours/blob/master/restaurant_hours.gif)
 
+<p align="justify">
+ Projeto desenvolvido em C++ e QML utilizando o Framework Qt 5.15.0.<br>
+ Permite filtrar uma lista de restaurantes fornecida por um arquivo .csv, a partir da comparação entre seus horários de abertura e fechamento e do horário desejado pelo usuário.<br>
+ Tanto a inserção do horário a ser filtrado, quanto a lista retornada são gerenciadas via Interface Gráfica.
+</p>
 
 ## Ferramentas Utilizadas
 <a href="https://www.qt.io/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" alt="qt" width="40" height="35"/> </a> <br>
