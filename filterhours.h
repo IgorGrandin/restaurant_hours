@@ -17,7 +17,7 @@ signals:
     void availableHoursChanged();
 
 public slots:
-    void setAvailableHours(QStringList resName);
+    void setAvailableHours(QStringList resTime);
 
 private:
     QStringList m_resName;
