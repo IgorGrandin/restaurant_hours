@@ -17,8 +17,8 @@
 
 ## Descrição do Projeto
 <p align="justify">
- Projeto desenvolvido em C++ e QML utilizando o Framework Qt 5.15.0.
- Permite filtrar uma lista de restaurantes fornecida por um arquivo .csv, a partir da comparação entre seus horários de abertura e fechamento e do horário desejado pelo usuário.
+ Projeto desenvolvido em C++ e QML utilizando o Framework Qt 5.15.0.<br>
+ Permite filtrar uma lista de restaurantes fornecida por um arquivo .csv, a partir da comparação entre seus horários de abertura e fechamento e do horário desejado pelo usuário.<br>
  Tanto a inserção do horário a ser filtrado, quanto a lista retornada são gerenciadas via Interface Gráfica.
 </p>
 
@@ -40,9 +40,29 @@
 ![](https://github.com/IgorGrandin/restaurant_hours/blob/master/restaurant_hours.gif)
 
 <p align="justify">
- Projeto desenvolvido em C++ e QML utilizando o Framework Qt 5.15.0.<br>
- Permite filtrar uma lista de restaurantes fornecida por um arquivo .csv, a partir da comparação entre seus horários de abertura e fechamento e do horário desejado pelo usuário.<br>
- Tanto a inserção do horário a ser filtrado, quanto a lista retornada são gerenciadas via Interface Gráfica.
+ Métodos:<br>
+ 
+ ```c++
+ QStringList availableHours();
+ ```
+
+ <p style="margin-left:30px">Método responsável por retornar um Lista de Strings contendo as informações dos restaurantes filtrados.<br>
+ Na Interface Gráfica, o retorno dessa função será exibido na `ScrollView` e atualizado sempre que o Método `void availableHoursChanged();` for notificado por alguma mudança do Método `void setAvailableHours(QStringList resName);`.</p>
+
+ ```c++
+ void setAvailableHours(QStringList resName);
+ ```
+
+<p style="margin-left:30px">Método responsável por receber uma Lista de Strings contendo os horários desejados para futura filtragem.<br>
+Como a aplicação QML só permite a inserção de um horário, a lista sempre terá apenas uma posição, mas foi implementado dessa forma para ter autonomia de notificar o Método `void availableHoursChanged();` e permitir o retorno do Método `QStringList availableHours();` como sendo uma Lista de Strings.</p>
+
+ ```c++
+ void availableHoursChanged();
+ ```
+
+<p style="margin-left:30px">Método responsável por monitorar as alterações realizadas pelo Método `void setAvailableHours(QStringList resName);` e notificar todos os objetos que utilizam o retorno do Método `QStringList availableHours();` para que atualizem seus valores. </p>
+
+
 </p>
 
 ## Ferramentas Utilizadas
