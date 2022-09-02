@@ -9,7 +9,7 @@ Window {
     height: 720
     visible: true
     title: qsTr("Restaurant Hours")
-    color: '#cef5ff'
+    color: '#ACE9E8'
 
     FilterHours {
         id: aHours
@@ -45,25 +45,41 @@ Window {
             font.family: "Helvetica"
             font.pointSize: 20
             validator: RegularExpressionValidator { regularExpression: /^(0[1-9]|1[0-9]|2[0-4]):[0-5][0-9]$/ }
+            background: Rectangle {
+                width: textinput.width
+                height: textinput.height
+                color: '#eafcfc'
+                border.color: '#2E6968'
+                border.width: 1
+                radius: 10
+            }
         }
 
         Button {
             id: but
-            text: "Filter"
+            width: 200
+            height: 50
             onClicked: aHours.setAvailableHours(textinput.text);//'../restaurant_hours/restaurant_hours.csv', textinput.text);
             anchors{
                 left: textinput.right
                 verticalCenter: textinput.verticalCenter
                 leftMargin: 25
             }
-            font.pointSize: 12
-            width: 200
-            height: 50
+            contentItem: Text {
+                    text: "Filter"
+                    font.pointSize: 12
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                }
             background: Rectangle {
                 width: but.width
                 height: but.height
-                color: '#a5edff'
+                color: '#86B5B4'
                 radius: 10
+                border.color: '#2E6968'
+                border.width: 2
             }
         }
 
@@ -72,8 +88,10 @@ Window {
     Rectangle {
         width: 900
         height: 500
-        border.color: 'gray'
+        color: '#eafcfc'
+        border.color: '#2E6968'
         border.width: 1
+        radius: 10
         anchors {
             bottom: parent.bottom
             horizontalCenter: rowl.horizontalCenter
@@ -97,6 +115,7 @@ Window {
                     id: rectext
                     width: name.width - 10
                     height: textolista.height + 20
+                    color: '#eafcfc'
                     border.color: 'gray'
                     border.width: 0.5
                     Text {
