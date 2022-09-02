@@ -11,6 +11,7 @@
   - [Aplicação](#aplicação)
   - [Ferramentas Utilizadas](#ferramentas-utilizadas)
   - [Acesso ao Projeto](#acesso-ao-projeto)
+  - [Testes Unitários](#testes-unitários)
   - [Abrir e Rodar o Projeto](#abrir-e-rodar-o-projeto)
   - [Desenvolvedores](#desenvolvedores)
 
