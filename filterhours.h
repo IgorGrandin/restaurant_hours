@@ -2,7 +2,6 @@
 #define FILTERHOURS_H
 
 #include <QObject>
-//#include <qqml.h>
 
 class FilterHours : public QObject
 {
@@ -18,7 +17,7 @@ signals:
     void availableHoursChanged();
 
 public slots:
-    void setAvailableHours(QStringList resName);//QString docName, QString hour, QStringList restName);
+    void setAvailableHours(QStringList resName);
 
 private:
     QStringList m_resName;

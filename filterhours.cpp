@@ -12,7 +12,6 @@ FilterHours::FilterHours(QObject *parent)
 
 }
 
-
 QStringList FilterHours::availableHours(){
 
     return m_resName;
@@ -26,7 +25,7 @@ void FilterHours::setAvailableHours(QStringList resTime)
 
         m_avHours = resTime;
 
-        QFile file("../restaurant_hours/restaurant_hours2.csv");//docName);
+        QFile file("../restaurant_hours/restaurant_hours.csv");//docName);
         if (!file.open(QIODevice::ReadOnly)) {
             qDebug() << file.errorString();
         } else {
@@ -38,11 +37,9 @@ void FilterHours::setAvailableHours(QStringList resTime)
                 //qDebug() << line;
                 if(line.split('-').length() >= 3 && line.split(',').length() >= 2 ){
                     qDebug() << line;
-                    m_resName.append(line);//line.replace("\"", "").replace("\n","-" + avHours));
+                    m_resName.append(line);
                 }
             }
-
-            //m_resName.removeFirst();
 
             QStringList m_resResult;
 
@@ -70,7 +67,7 @@ void FilterHours::setAvailableHours(QStringList resTime)
                 str.remove(str.lastIndexOf(","), 12);
                 hourA = hourA.rightJustified(11, '0');
                 hourA = hourA.leftJustified(20, ' ');
-                return hourA.append(str); //str.replace(",", "\t");
+                return hourA.append(str);
             };
 
             std::transform(m_resResult.begin(), m_resResult.end(), m_resResult.begin(), unary_op);
